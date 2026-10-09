@@ -2,7 +2,7 @@
   "version": "v0.1.0",
   "repository": "https://github.com/fun-ed/omnigate",
   "module": "github.com/fun-ed/omnigate",
-  "scope": "Pre-publication source, privacy review, build, and isolated runtime verification. Remote commit/tag/release state is verified separately after publication.",
+  "scope": "Source, privacy review, build, isolated runtime, remote publication, downloaded assets, and public-tag fresh-clone verification.",
   "verification": {
     "go_version": "go1.27.1",
     "go_race": "passed: go test -race -count=1 -cover ./...",
@@ -33,6 +33,16 @@
     "exclude": "Private production Webfiles, certificate/EAB/account state, credentials, environment files, local tools/Serena/cache/logs/backups/dist binaries",
     "environment_compatibility": "WEB_HTTP_AUTH_PASSWORD and Google EAB environment names unchanged",
     "legacy_binary": "Retained locally; not committed or released"
+  },
+  "publication": {
+    "release_url": "https://github.com/fun-ed/omnigate/releases/tag/v0.1.0",
+    "tag_commit": "189c176b1f48e42ce922cb3ef5b06fbe439b5d48",
+    "release_state": "Published; not draft or prerelease",
+    "notes": "Exact CHANGELOG plus actual artifact and test evidence",
+    "downloaded_assets": ["omnigate-darwin-arm64", "SHA256SUMS", "build-info.txt"],
+    "download_checksums": "All matched",
+    "fresh_clone": "Published v0.1.0 lacks private configs/tools/dist; Go tests passed",
+    "reproducibility": "Fresh-clone production build is byte-identical to downloaded native binary"
   },
   "not_verified": [
     "Production restart or public hardening rollout",

@@ -12,8 +12,8 @@
 - [x] 初始化 main 與 origin，使用既定 helper 確認 Git identity。
 - [x] Go race／vet、Python tests、範例與品牌回歸通過。
 - [x] production binary、build metadata／SHA256、隔離 smoke 通過。
-- [ ] 明確檔案清單 staging、公開内容再次檢查、commit／push。
-- [ ] tag／GitHub Release notes、assets 及下載 checksum 驗證。
+- [x] 明確檔案清單 staging、公開內容再次檢查、commit／push。
+- [x] tag／GitHub Release notes、assets 及下載 checksum 驗證。
 
 ## 公開邊界
 
@@ -32,3 +32,11 @@ Go 1.27.1，CGO disabled，trimpath／buildvcs=false／stripped darwin arm64 art
 ## 回復
 
 更名前設定／module／agent 指令有已驗證的私有時間戳備份。公開 commit／tag 不 force push、刪除或改寫；發現發布問題時停止發布並另行授權處理。發布不改動正式程序，因此不需要 restart rollback。
+
+## 遠端驗收結果
+
+`main` 已推送至 `fun-ed/omnigate`。`v0.1.0` annotated tag 指向 initial commit `189c176b1f48e42ce922cb3ef5b06fbe439b5d48`，GitHub Release 已公開，notes 與 CHANGELOG 加驗收資訊一致。
+
+Release 提供 `omnigate-darwin-arm64`、`SHA256SUMS`、`build-info.txt`，三份檔案重新下載後全部核對一致。另從公開 `v0.1.0` fresh clone 驗證 private config／工具／dist 不存在、Go tests 通過，並以相同正式 flags 重建出 byte-identical binary。測試及發布證據見 [release verification](../reports/2026-10-10-omnigate-v0.1.0.json)。
+
+Release URL：https://github.com/fun-ed/omnigate/releases/tag/v0.1.0
