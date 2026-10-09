@@ -1,0 +1,6 @@
+# Run with: ./omnigate -config config/http-example.Webfile
+:8080 {
+    rate_limit 10 20
+    # root "./public"
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+}

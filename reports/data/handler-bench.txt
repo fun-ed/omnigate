@@ -1,0 +1,10 @@
+goos: darwin
+goarch: arm64
+pkg: web-http
+cpu: Apple M4
+BenchmarkDefaultHTML-10            	 3133689	       457.2 ns/op	     288 B/op	       4 allocs/op
+BenchmarkBasicAuthHTML-10          	  281998	      3835 ns/op	    1216 B/op	      11 allocs/op
+BenchmarkRateLimiter-10            	 6026907	       196.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkRateLimiterParallel-10    	 3771602	       346.0 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	web-http	8.614s

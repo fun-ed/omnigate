@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-09",
+  "scope": "source, configuration, production artifact, and isolated loopback fixtures; not live deployment",
+  "go": {
+    "version": "go1.27.1",
+    "race_command": "mise exec go@1.27.1 -- go test -race -count=1 -cover ./...",
+    "race": "passed",
+    "statement_coverage_percent": 80.3,
+    "vet_command": "mise exec go@1.27.1 -- go vet ./...",
+    "vet": "passed"
+  },
+  "python": {
+    "command": "mise exec -- python -m unittest discover -s scripts -p 'test_*.py' -v",
+    "tests": 12,
+    "result": "passed",
+    "diagnostic": "A fixture emitted a ConnectionResetError while a connection closed; unittest still completed with OK."
+  },
+  "review": {
+    "security": "Independent source review found a WebSocket 101 response-policy/request-ID gap; fixed and focused re-review found no remaining actionable issue.",
+    "correctness": "Independent source review and re-review found no remaining actionable issue; requested full-stack WS and 103/trailer coverage was added.",
+    "new_protocol_tests": [
+      "TestHardeningProtocolWebSocketUpgradeHeadersAndFrames",
+      "TestHardeningProtocolEarlyHintsFinalResponseAndTrailer"
+    ],
+    "runtime_evidence": "Both protocol tests passed in the final full race suite; real WS upgrade checks exact policy headers, a single generated ID, credential removal, canonical upstream Host, two frame round trips, and completion logging."
+  },
+  "artifact": {
+    "path": "dist/web-http-darwin-arm64",
+    "bytes": 10359890,
+    "sha256": "4d316229649d1f3739f2d6f80872a0d54dc3ef4d00029e6d53f291015851dc5e",
+    "target": "darwin/arm64",
+    "build": "CGO_ENABLED=0, -trimpath, -buildvcs=false, -ldflags='-s -w'",
+    "build_info": "dist/build-info.txt",
+    "checksums": "dist/SHA256SUMS; binary and build-info hashes verified",
+    "cli_flags": "All ten new flags verified through -help",
+    "installation": "Atomic on-disk replacement after verified backup and isolated smoke; no running process was stopped or restarted."
+  },
+  "isolated_binary_smoke": {
+    "configuration": "config/production.Webfile with ephemeral loopback HTTP address, isolated fixture upstream, rate disabled for this probe, max-body-bytes overridden to 8, and generated in-memory test credential",
+    "http_checks": [
+      "HTTP healthz 200, private no-store, no redirect",
+      "HTTP readyz 200, private no-store, no redirect",
+      "Canonical 301 before auth; escaped path/query retained and spoofed Host ignored",
+      "Trusted external HTTPS 401 without redirect, with challenge/private cache/security headers and generated ID",
+      "Authenticated fixture proxy 200 with edge credentials removed",
+      "Known oversized request body 413",
+      "Backend remains ready after body rejection"
+    ],
+    "helper_checks": [
+      "healthz passed",
+      "readyz passed",
+      "unauthenticated 401 passed",
+      "authenticated marker passed",
+      "WebSocket echo passed"
+    ],
+    "helper_external_scheme": "https injected only into validated loopback origin checks; no public probe",
+    "probe_harness_corrections": "Used case-insensitive HTTPMessage header lookup and the helper's actual status='passed' schema. Captured results were then validated; these were probe assertions, not server failures.",
+    "log_privacy": "passed; no test password/Authorization, path/query, or fixture marker in server logs",
+    "sigterm_exit_code": 0,
+    "production_ports": "Neither 8081 nor 6767 used by owned smoke listeners"
+  },
+  "configuration_and_docs": {
+    "production_mode": "0600 preserved",
+    "relative_links": "Final relative-link check passed for all 12 changed Markdown files, including links to this report.",
+    "rollback": "Previous binary/build metadata and pre-hardening production/public Webfiles have verified private backups outside the repository. Restore binary and profile together; the old binary rejects new directives."
+  },
+  "not_performed": [
+    "Live Go, Omnigent, or tunnel restart",
+    "Cloudflare HTTPS rule, cache bypass, or cache purge",
+    "New public HTTP/HTTPS/WSS hardening acceptance",
+    "Real Omnigent WebSocket endpoint acceptance",
+    "Production upload-cap activation; profile remains 0 pending legitimate upload policy",
+    "New load test or claim that this artifact is faster or uses less memory",
+    "Real Google EAB or certificate issuance/renewal",
+    "Git init, commit, push, or persistent semantic-index creation"
+  ]
+}

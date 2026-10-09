@@ -1,0 +1,20 @@
+# Single site only. Replace the hostname and email before starting.
+# HTTP-01 validation always requires public TCP port 80, even with custom ports.
+example.com {
+    http :80
+    https :443
+    http3 :443
+
+    tls google admin@example.com
+    accept_tos on
+    google_setup on
+    cert_dir .certs
+    # google_project your-project-id
+
+    rate_limit 10 20
+    health_check /healthz 10s
+
+    # root "./public"
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+    # reverse_proxy http://127.0.0.1:9001 http://127.0.0.1:9002
+}

@@ -1,0 +1,18 @@
+# Replace hostname/email. Public TCP 80 must reach HTTP-01.
+# Clients use wss://example.com:8443/socket. Upstreams must expose /healthz.
+example.com {
+    http :80
+    https :8443
+    http3 :8443
+
+    tls google admin@example.com
+    accept_tos on
+    google_setup on
+    cert_dir .certs
+
+    reverse_proxy ws://127.0.0.1:9001 ws://127.0.0.1:9002
+    health_check /healthz 10s
+    rate_limit 10 20
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+    # For encrypted upstreams, use wss:// with a publicly trusted certificate.
+}

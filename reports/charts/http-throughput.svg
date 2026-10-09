@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+<title>Measured HTTP throughput</title><desc>HTTP/1.1; 10s per stage; Darwin arm64</desc>
+<rect width="960" height="540" fill="#ffffff"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="40.00" y="43.00" font-size="24" fill="#0f172a" text-anchor="start">Measured HTTP throughput</text>
+<text x="40.00" y="72.00" font-size="13" fill="#334155" text-anchor="start">HTTP/1.1; 10s per stage; Darwin arm64</text>
+<line x1="96" y1="425.00" x2="920" y2="425.00" stroke="#e2e8f0"/>
+<text x="84.00" y="430.00" font-size="14" fill="#334155" text-anchor="end">0.00</text>
+<line x1="96" y1="362.00" x2="920" y2="362.00" stroke="#e2e8f0"/>
+<text x="84.00" y="367.00" font-size="14" fill="#334155" text-anchor="end">1703</text>
+<line x1="96" y1="299.00" x2="920" y2="299.00" stroke="#e2e8f0"/>
+<text x="84.00" y="304.00" font-size="14" fill="#334155" text-anchor="end">3405</text>
+<line x1="96" y1="236.00" x2="920" y2="236.00" stroke="#e2e8f0"/>
+<text x="84.00" y="241.00" font-size="14" fill="#334155" text-anchor="end">5108</text>
+<line x1="96" y1="173.00" x2="920" y2="173.00" stroke="#e2e8f0"/>
+<text x="84.00" y="178.00" font-size="14" fill="#334155" text-anchor="end">6810</text>
+<line x1="96" y1="110.00" x2="920" y2="110.00" stroke="#e2e8f0"/>
+<text x="84.00" y="115.00" font-size="14" fill="#334155" text-anchor="end">8513</text>
+<path d="M 96 110 V 425 H 920" fill="none" stroke="#64748b"/>
+<g transform="translate(24 267.5) rotate(-90)"><text x="0.00" y="0.00" font-size="12" fill="#334155" text-anchor="middle">requests/s</text></g>
+<text x="96.00" y="450.00" font-size="14" fill="#334155" text-anchor="middle">1</text>
+<text x="170.91" y="450.00" font-size="14" fill="#334155" text-anchor="middle">10</text>
+<text x="420.61" y="450.00" font-size="14" fill="#334155" text-anchor="middle">40</text>
+<text x="920.00" y="450.00" font-size="14" fill="#334155" text-anchor="middle">100</text>
+<text x="508.00" y="478.00" font-size="14" fill="#334155" text-anchor="middle">Concurrent HTTP/1.1 workers</text>
+<path d="M 96.00 248.65 L 170.91 151.09 L 420.61 187.79 L 920.00 172.27" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<circle cx="96.00" cy="248.65" r="5" fill="#2563eb"><title>Successful requests/s: 4765.830 requests/s</title></circle>
+<circle cx="170.91" cy="151.09" r="5" fill="#2563eb"><title>Successful requests/s: 7402.404 requests/s</title></circle>
+<circle cx="420.61" cy="187.79" r="5" fill="#2563eb"><title>Successful requests/s: 6410.641 requests/s</title></circle>
+<circle cx="920.00" cy="172.27" r="5" fill="#2563eb"><title>Successful requests/s: 6830.007 requests/s</title></circle>
+<rect x="96" y="88" width="12" height="12" fill="#2563eb"/>
+<text x="114.00" y="99.00" font-size="12" fill="#334155" text-anchor="start">Successful requests/s</text>
+<text x="40.00" y="515.00" font-size="12" fill="#334155" text-anchor="start">Same-host closed-loop test. No cross-server comparison or capacity guarantee.</text>
+</g></svg>

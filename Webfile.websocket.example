@@ -1,0 +1,18 @@
+# WS and WSS use HTTP/1.1 Upgrade, not HTTP/3 extended CONNECT.
+# Replace the hostname and email. TCP 80 must be publicly reachable for ACME.
+example.com {
+    http :80
+    https :8443
+    http3 :8443
+
+    tls google admin@example.com
+    accept_tos on
+    google_setup on
+    cert_dir .certs
+
+    rate_limit 10 20
+    health_check /healthz 10s
+    reverse_proxy ws://127.0.0.1:9001 ws://127.0.0.1:9002
+    # HTTPS-encrypted upstreams may use wss:// instead of ws://.
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+}

@@ -1,0 +1,22 @@
+# Cloudflare edge provides public HTTPS/WSS.
+# cloudflared tunnel --protocol http2 run forwards to this loopback origin.
+# Only a trusted external HTTP scheme redirects; external HTTPS must not loop.
+:8081 {
+    http 127.0.0.1:8081
+    public_url https://example.com
+    https_redirect on
+    trusted_proxies 127.0.0.1/32 ::1/128
+    client_ip_header CF-Connecting-IP
+    private_cache on
+    hsts_max_age 86400
+    frame_options SAMEORIGIN
+    referrer_policy strict-origin-when-cross-origin
+    # 0 keeps existing uploads compatible until their required size is known.
+    max_body_bytes 0
+    access_log on
+    rate_limit 10 20
+    basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+    # root ./public
+    reverse_proxy http://127.0.0.1:6767
+    health_check /healthz 10s
+}

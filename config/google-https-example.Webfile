@@ -1,0 +1,17 @@
+# Replace hostname and email before first setup.
+# Public TCP 80 must reach the HTTP-01 listener.
+example.com {
+    http :80
+    https :443
+    http3 :443
+
+    tls google admin@example.com
+    accept_tos on
+    google_setup on
+    cert_dir .certs
+    # google_project your-project-id
+
+    rate_limit 10 20
+    # root "./public"
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+}

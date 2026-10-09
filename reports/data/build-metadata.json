@@ -1,0 +1,30 @@
+{
+  "go_version": "go version go1.27.1 darwin/arm64",
+  "build_command": "mise exec go@1.27.1 -- go build -o <temporary binary> .",
+  "server_flags": [
+    "-http",
+    "127.0.0.1:58983",
+    "-rate",
+    "0"
+  ],
+  "workload": "built-in default HTML; no authentication, upstream, file hosting, TLS, HTTP3 or WebSocket traffic",
+  "client_location": "same machine as server",
+  "binary_sha256": "7309b64d6eb32271b9f81cf70736d6c0a0e3ea421aa0d7fac42ad9534bbccd9f",
+  "source_sha256": {
+    "bootstrap.go": "e098505f8016f7913b17824c4c3abbe9506340914eeaec5696d22cda400f2060",
+    "config.go": "2c70ae844df3d1dd979332e6b3d98346b117c0020b5ad5bf72731fb65ec15c1e",
+    "http3.go": "b94a3743b9e9f1811618e0d22ef349bb98dc2e6433a96035e0cc53489f657a92",
+    "main.go": "962c623be21483e86de107111d1783bd0c3244014d34bca902fb836967878af0",
+    "proxy.go": "72a327b94d8d345ce41f478b0bc68cc23888c5b6fe1052780dc58658533e6a7a",
+    "server.go": "42181372bdc75f0eee1e91b5e4b99371900ed071fce5f607a349128e20f01124",
+    "tls.go": "035c702c5b605983bf0fa03d0fdcfe3a46ba9711db7d1eaa4459c6378f9e45e5"
+  },
+  "module_sha256": "f68ca428364c68dce2209fbf460a1ede53c926933adbc4e2f023797d86c3a5a1",
+  "load_script_sha256": "1d215e508c031d9016202f437c24c24a0fd735454879e68ce25e07d31aaf2ef4",
+  "runtime_environment_overrides": {
+    "GOGC": "<unset; Go default>",
+    "GOMEMLIMIT": "<unset; Go default>",
+    "GOMAXPROCS": "<unset; Go default>"
+  },
+  "shutdown": "SIGTERM returned exit code 0"
+}

@@ -1,0 +1,45 @@
+{
+  "version": "v0.1.0",
+  "repository": "https://github.com/fun-ed/omnigate",
+  "module": "github.com/fun-ed/omnigate",
+  "scope": "Pre-publication source, privacy review, build, and isolated runtime verification. Remote commit/tag/release state is verified separately after publication.",
+  "verification": {
+    "go_version": "go1.27.1",
+    "go_race": "passed: go test -race -count=1 -cover ./...",
+    "statement_coverage_percent": 80.3,
+    "go_vet": "passed",
+    "python_tests": 12,
+    "python_result": "OK; a fixture printed an expected connection-reset diagnostic on socket close",
+    "branding": "Module, CLI help, default HTML, and Basic Auth realm verified as OmniGate/omnigate",
+    "privacy_review": "Independent review and focused re-review found no remaining blocking publication issue; concrete cloud project and tunnel identifiers removed from current public deployment examples",
+    "isolated_smoke": [
+      "canonical 301 with escaped path/query and spoofed Host ignored",
+      "trusted HTTPS 401 with OmniGate realm and private no-store",
+      "healthz 200",
+      "readyz 200",
+      "authenticated proxy marker and edge credential removal",
+      "WebSocket echo",
+      "SIGTERM exit code 0"
+    ]
+  },
+  "artifact": {
+    "name": "omnigate-darwin-arm64",
+    "sha256": "0512a897a171d0f96eb4820f6efe7ae2efbcac993b9e2ed444e10b8bfc642d2d",
+    "build": "CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -trimpath -buildvcs=false -ldflags='-s -w'",
+    "metadata": "Release build-info.txt uses relative paths only; SHA256SUMS includes binary and metadata"
+  },
+  "publication_boundaries": {
+    "include": "Explicit public source/docs/examples/scripts/plans/historical report-and-chart whitelist",
+    "exclude": "Private production Webfiles, certificate/EAB/account state, credentials, environment files, local tools/Serena/cache/logs/backups/dist binaries",
+    "environment_compatibility": "WEB_HTTP_AUTH_PASSWORD and Google EAB environment names unchanged",
+    "legacy_binary": "Retained locally; not committed or released"
+  },
+  "not_verified": [
+    "Production restart or public hardening rollout",
+    "Real Omnigent WSS endpoint",
+    "Real Google ACME issuance or renewal",
+    "New performance benchmark or long-running soak",
+    "Runtime on platforms other than macOS arm64"
+  ],
+  "license": "Not selected; no license file added"
+}

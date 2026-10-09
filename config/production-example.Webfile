@@ -1,0 +1,19 @@
+# Replace the ACME email and project ID before use.
+# No real passwords, EAB, account keys or certificate keys belong here.
+example.com {
+    http :80
+    https :443
+    http3 :443
+
+    tls google admin@example.com
+    accept_tos off
+    google_setup on
+    google_project your-project-id
+    cert_dir .certs-example.com
+
+    rate_limit 10 20
+    basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+    # root ./public
+    # reverse_proxy http://127.0.0.1:9001 http://127.0.0.1:9002
+    # health_check /healthz 10s
+}

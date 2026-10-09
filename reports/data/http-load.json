@@ -1,0 +1,450 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-08T16:14:57.307312+00:00",
+  "environment": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "logical_cpus": 10,
+    "python": "3.14.8"
+  },
+  "target": "http://127.0.0.1:58983/",
+  "protocol": "HTTP/1.1",
+  "model": "closed-loop; one keep-alive connection per worker; successful status is 200",
+  "rss_scope": "server PID only; sampled every 0.5s; not total process-tree memory or a guaranteed peak",
+  "limitations": [
+    "No TLS or QUIC conclusions from HTTP-only runs",
+    "Client may bottleneck, especially when client and server share a machine",
+    "Not an open-loop capacity test or long-duration soak",
+    "Latency percentiles include successful requests only",
+    "Rate limiting/auth must be configured deliberately",
+    "Responses larger than 1 MiB are rejected"
+  ],
+  "idle_server_rss_mib": 10.34375,
+  "stages": [
+    {
+      "concurrency": 1,
+      "requested_duration_s": 10.0,
+      "elapsed_s": 10.006651875097305,
+      "completed": 47690,
+      "successful": 47690,
+      "successful_requests_per_s": 4765.8298295239,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "errors": {},
+      "statuses": {
+        "200": 47690
+      },
+      "response_body_bytes": 10968700,
+      "successful_latency_ms": {
+        "p50": 0.14166696928441525,
+        "p95": 0.4629169125109911,
+        "p99": 1.107791904360056,
+        "max": 24.120665853843093
+      },
+      "server_sampled_rss_mib": {
+        "min": 10.515625,
+        "max": 15.078125,
+        "last": 15.03125
+      },
+      "rss_samples": [
+        {
+          "elapsed_s": 0.008,
+          "rss_mib": 10.515625
+        },
+        {
+          "elapsed_s": 0.527,
+          "rss_mib": 13.703125
+        },
+        {
+          "elapsed_s": 1.061,
+          "rss_mib": 14.09375
+        },
+        {
+          "elapsed_s": 1.58,
+          "rss_mib": 14.859375
+        },
+        {
+          "elapsed_s": 2.102,
+          "rss_mib": 14.46875
+        },
+        {
+          "elapsed_s": 2.665,
+          "rss_mib": 13.640625
+        },
+        {
+          "elapsed_s": 3.267,
+          "rss_mib": 12.640625
+        },
+        {
+          "elapsed_s": 3.79,
+          "rss_mib": 13.765625
+        },
+        {
+          "elapsed_s": 4.308,
+          "rss_mib": 14.078125
+        },
+        {
+          "elapsed_s": 4.825,
+          "rss_mib": 14.234375
+        },
+        {
+          "elapsed_s": 5.338,
+          "rss_mib": 13.78125
+        },
+        {
+          "elapsed_s": 5.845,
+          "rss_mib": 14.15625
+        },
+        {
+          "elapsed_s": 6.355,
+          "rss_mib": 15.0
+        },
+        {
+          "elapsed_s": 6.872,
+          "rss_mib": 15.0625
+        },
+        {
+          "elapsed_s": 7.391,
+          "rss_mib": 15.015625
+        },
+        {
+          "elapsed_s": 7.914,
+          "rss_mib": 14.234375
+        },
+        {
+          "elapsed_s": 8.432,
+          "rss_mib": 14.390625
+        },
+        {
+          "elapsed_s": 8.981,
+          "rss_mib": 14.484375
+        },
+        {
+          "elapsed_s": 9.496,
+          "rss_mib": 15.078125
+        },
+        {
+          "elapsed_s": 10.023,
+          "rss_mib": 15.03125
+        }
+      ]
+    },
+    {
+      "concurrency": 10,
+      "requested_duration_s": 10.0,
+      "elapsed_s": 10.002291166922078,
+      "completed": 74041,
+      "successful": 74041,
+      "successful_requests_per_s": 7402.403985684415,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "errors": {},
+      "statuses": {
+        "200": 74041
+      },
+      "response_body_bytes": 17029430,
+      "successful_latency_ms": {
+        "p50": 1.0354169644415379,
+        "p95": 3.3362910617142916,
+        "p99": 5.790916038677096,
+        "max": 41.48937505669892
+      },
+      "server_sampled_rss_mib": {
+        "min": 15.109375,
+        "max": 16.5625,
+        "last": 16.0
+      },
+      "rss_samples": [
+        {
+          "elapsed_s": 0.019,
+          "rss_mib": 15.109375
+        },
+        {
+          "elapsed_s": 0.535,
+          "rss_mib": 15.640625
+        },
+        {
+          "elapsed_s": 1.055,
+          "rss_mib": 15.828125
+        },
+        {
+          "elapsed_s": 1.572,
+          "rss_mib": 16.171875
+        },
+        {
+          "elapsed_s": 2.103,
+          "rss_mib": 15.359375
+        },
+        {
+          "elapsed_s": 2.623,
+          "rss_mib": 15.3125
+        },
+        {
+          "elapsed_s": 3.143,
+          "rss_mib": 15.46875
+        },
+        {
+          "elapsed_s": 3.66,
+          "rss_mib": 15.96875
+        },
+        {
+          "elapsed_s": 4.178,
+          "rss_mib": 15.984375
+        },
+        {
+          "elapsed_s": 4.715,
+          "rss_mib": 16.296875
+        },
+        {
+          "elapsed_s": 5.236,
+          "rss_mib": 16.125
+        },
+        {
+          "elapsed_s": 5.764,
+          "rss_mib": 15.578125
+        },
+        {
+          "elapsed_s": 6.289,
+          "rss_mib": 15.28125
+        },
+        {
+          "elapsed_s": 6.805,
+          "rss_mib": 15.59375
+        },
+        {
+          "elapsed_s": 7.323,
+          "rss_mib": 16.28125
+        },
+        {
+          "elapsed_s": 7.841,
+          "rss_mib": 16.015625
+        },
+        {
+          "elapsed_s": 8.356,
+          "rss_mib": 16.5625
+        },
+        {
+          "elapsed_s": 8.878,
+          "rss_mib": 15.921875
+        },
+        {
+          "elapsed_s": 9.406,
+          "rss_mib": 15.609375
+        },
+        {
+          "elapsed_s": 9.946,
+          "rss_mib": 16.0
+        }
+      ]
+    },
+    {
+      "concurrency": 40,
+      "requested_duration_s": 10.0,
+      "elapsed_s": 10.009140083100647,
+      "completed": 64165,
+      "successful": 64165,
+      "successful_requests_per_s": 6410.640621199385,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "errors": {},
+      "statuses": {
+        "200": 64165
+      },
+      "response_body_bytes": 14757950,
+      "successful_latency_ms": {
+        "p50": 4.848125157877803,
+        "p95": 15.814375132322311,
+        "p99": 24.959166068583727,
+        "max": 82.8459169715643
+      },
+      "server_sampled_rss_mib": {
+        "min": 15.40625,
+        "max": 16.84375,
+        "last": 16.046875
+      },
+      "rss_samples": [
+        {
+          "elapsed_s": 0.033,
+          "rss_mib": 16.125
+        },
+        {
+          "elapsed_s": 0.556,
+          "rss_mib": 16.40625
+        },
+        {
+          "elapsed_s": 1.085,
+          "rss_mib": 16.375
+        },
+        {
+          "elapsed_s": 1.618,
+          "rss_mib": 15.921875
+        },
+        {
+          "elapsed_s": 2.144,
+          "rss_mib": 15.796875
+        },
+        {
+          "elapsed_s": 2.689,
+          "rss_mib": 16.84375
+        },
+        {
+          "elapsed_s": 3.221,
+          "rss_mib": 15.859375
+        },
+        {
+          "elapsed_s": 3.746,
+          "rss_mib": 16.765625
+        },
+        {
+          "elapsed_s": 4.261,
+          "rss_mib": 16.25
+        },
+        {
+          "elapsed_s": 4.781,
+          "rss_mib": 16.40625
+        },
+        {
+          "elapsed_s": 5.318,
+          "rss_mib": 16.265625
+        },
+        {
+          "elapsed_s": 5.862,
+          "rss_mib": 16.3125
+        },
+        {
+          "elapsed_s": 6.449,
+          "rss_mib": 15.40625
+        },
+        {
+          "elapsed_s": 6.991,
+          "rss_mib": 15.71875
+        },
+        {
+          "elapsed_s": 7.514,
+          "rss_mib": 16.125
+        },
+        {
+          "elapsed_s": 8.044,
+          "rss_mib": 16.28125
+        },
+        {
+          "elapsed_s": 8.575,
+          "rss_mib": 15.65625
+        },
+        {
+          "elapsed_s": 9.098,
+          "rss_mib": 15.890625
+        },
+        {
+          "elapsed_s": 9.615,
+          "rss_mib": 16.046875
+        }
+      ]
+    },
+    {
+      "concurrency": 100,
+      "requested_duration_s": 10.0,
+      "elapsed_s": 10.02839404088445,
+      "completed": 68494,
+      "successful": 68494,
+      "successful_requests_per_s": 6830.0068506242305,
+      "error_count": 0,
+      "error_rate": 0.0,
+      "errors": {},
+      "statuses": {
+        "200": 68494
+      },
+      "response_body_bytes": 15753620,
+      "successful_latency_ms": {
+        "p50": 11.915916809812188,
+        "p95": 35.90724989771843,
+        "p99": 53.39850019663572,
+        "max": 125.10458379983902
+      },
+      "server_sampled_rss_mib": {
+        "min": 15.828125,
+        "max": 17.109375,
+        "last": 16.765625
+      },
+      "rss_samples": [
+        {
+          "elapsed_s": 0.064,
+          "rss_mib": 15.828125
+        },
+        {
+          "elapsed_s": 0.611,
+          "rss_mib": 16.34375
+        },
+        {
+          "elapsed_s": 1.157,
+          "rss_mib": 17.0625
+        },
+        {
+          "elapsed_s": 1.709,
+          "rss_mib": 17.109375
+        },
+        {
+          "elapsed_s": 2.259,
+          "rss_mib": 16.328125
+        },
+        {
+          "elapsed_s": 2.785,
+          "rss_mib": 16.390625
+        },
+        {
+          "elapsed_s": 3.307,
+          "rss_mib": 16.40625
+        },
+        {
+          "elapsed_s": 3.851,
+          "rss_mib": 16.578125
+        },
+        {
+          "elapsed_s": 4.4,
+          "rss_mib": 16.359375
+        },
+        {
+          "elapsed_s": 4.948,
+          "rss_mib": 16.46875
+        },
+        {
+          "elapsed_s": 5.511,
+          "rss_mib": 16.78125
+        },
+        {
+          "elapsed_s": 6.053,
+          "rss_mib": 16.65625
+        },
+        {
+          "elapsed_s": 6.582,
+          "rss_mib": 16.703125
+        },
+        {
+          "elapsed_s": 7.169,
+          "rss_mib": 16.46875
+        },
+        {
+          "elapsed_s": 7.72,
+          "rss_mib": 16.75
+        },
+        {
+          "elapsed_s": 8.254,
+          "rss_mib": 16.765625
+        },
+        {
+          "elapsed_s": 8.823,
+          "rss_mib": 16.671875
+        },
+        {
+          "elapsed_s": 9.396,
+          "rss_mib": 16.5625
+        },
+        {
+          "elapsed_s": 9.962,
+          "rss_mib": 16.765625
+        }
+      ]
+    }
+  ],
+  "finished_at_utc": "2026-10-08T16:15:37.621115+00:00"
+}

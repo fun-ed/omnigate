@@ -1,0 +1,8 @@
+# Both upstreams must implement GET /healthz and return 2xx.
+:8080 {
+    reverse_proxy http://127.0.0.1:9001 http://127.0.0.1:9002
+    health_check /healthz 10s
+    rate_limit 10 20
+    # root "./public"
+    # basic_auth admin env:WEB_HTTP_AUTH_PASSWORD
+}

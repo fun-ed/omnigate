@@ -1,0 +1,93 @@
+{
+  "recorded_at": "2026-10-09T03:16:36.525966+00:00",
+  "routing": {
+    "public_hostname": "omni.curl.rs",
+    "Go_origin": "http://127.0.0.1:8081",
+    "Omnigent_upstream": "http://127.0.0.1:6767",
+    "health_path": "/healthz",
+    "https_redirect": false
+  },
+  "reason_for_correction": "6767 belongs to the existing Omnigent application, not the Go listener. 8080 actual bind also failed;8081 verified by the Go server.",
+  "checks_against_actual_Omnigent": [
+    {
+      "name": "/healthz",
+      "status": "passed",
+      "http_status": 200
+    },
+    {
+      "name": "/readyz",
+      "status": "passed",
+      "http_status": 200
+    },
+    {
+      "name": "unauthenticated_root",
+      "status": "passed",
+      "http_status": 401
+    },
+    {
+      "name": "wrong_password",
+      "status": "passed",
+      "http_status": 401
+    },
+    {
+      "name": "authenticated_proxy_to_actual_Omnigent",
+      "status": "passed",
+      "http_status": 200,
+      "body_matches_direct_upstream": true
+    },
+    {
+      "name": "Omnigent_remained_running_after_Go_cleanup",
+      "status": "passed",
+      "http_status": 200
+    }
+  ],
+  "Go_config_regression": "go test -race -count=1 -run ^TestCloudflaredWebfile$ . passed",
+  "cloudflared_ingress_validation": "passed",
+  "existing_Omnigent_stopped_or_restarted": false,
+  "existing_tunnel_restarted": false,
+  "public_https_and_wss": "not_run; requires user to start Go and restart their tunnel with updated config",
+  "password_storage": "environment only; runtime smoke used a temporary secret, not persisted",
+  "config_backup": {
+    "timestamped": true,
+    "byte_equality_verified_before_edit": true,
+    "stored_outside_repository": true
+  },
+  "binary_sha256": "cbca2b858056bce368a231a31ec6896ecbe62fe206f8a1f726cf2a1fded6b502",
+  "owned_Go_smoke_exit_code": 0,
+  "isolated_fixture_Go8081_checks": [
+    {
+      "name": "fixture_Go8081_healthz",
+      "status": "passed",
+      "duration_ms": 0.864
+    },
+    {
+      "name": "fixture_Go8081_readyz",
+      "status": "passed",
+      "duration_ms": 0.219
+    },
+    {
+      "name": "fixture_Go8081_unauthenticated_401",
+      "status": "passed",
+      "duration_ms": 0.208
+    },
+    {
+      "name": "fixture_Go8081_authenticated_marker",
+      "status": "passed",
+      "duration_ms": 0.544
+    },
+    {
+      "name": "fixture_Go8081_websocket_echo",
+      "status": "passed",
+      "duration_ms": 1.083
+    }
+  ],
+  "fixture_scope": "Validates Go reverse proxy and WS echo with isolated backend; does not validate actual Omnigent WS endpoint or public WSS.",
+  "owned_fixture_process_exit_codes": [
+    0,
+    0
+  ],
+  "python_tool_tests": {
+    "status": "passed",
+    "count": 10
+  }
+}

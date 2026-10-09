@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img">
+<title>Handler microbenchmarks</title><desc>No socket I/O, TLS, QUIC or client. ns/op is not network throughput.</desc>
+<rect width="960" height="540" fill="#ffffff"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="40.00" y="43.00" font-size="24" fill="#0f172a" text-anchor="start">Handler microbenchmarks</text>
+<text x="40.00" y="72.00" font-size="13" fill="#334155" text-anchor="start">No socket I/O, TLS, QUIC or client. ns/op is not network throughput.</text>
+<text x="40.00" y="158.00" font-size="13" fill="#334155" text-anchor="start">DefaultHTML</text>
+<rect x="285" y="138" width="53.19" height="28" rx="3" fill="#2563eb"/>
+<text x="348.19" y="158.00" font-size="13" fill="#334155" text-anchor="start">457.2 ns/op</text>
+<text x="285.00" y="186.00" font-size="12" fill="#334155" text-anchor="start">288 B/op; 4 allocs/op</text>
+<text x="40.00" y="236.00" font-size="13" fill="#334155" text-anchor="start">BasicAuthHTML</text>
+<rect x="285" y="216" width="446.15" height="28" rx="3" fill="#dc2626"/>
+<text x="741.15" y="236.00" font-size="13" fill="#334155" text-anchor="start">3835 ns/op</text>
+<text x="285.00" y="264.00" font-size="12" fill="#334155" text-anchor="start">1216 B/op; 11 allocs/op</text>
+<text x="40.00" y="314.00" font-size="13" fill="#334155" text-anchor="start">RateLimiter</text>
+<rect x="285" y="294" width="22.85" height="28" rx="3" fill="#059669"/>
+<text x="317.85" y="314.00" font-size="13" fill="#334155" text-anchor="start">196.4 ns/op</text>
+<text x="285.00" y="342.00" font-size="12" fill="#334155" text-anchor="start">0 B/op; 0 allocs/op</text>
+<text x="40.00" y="392.00" font-size="13" fill="#334155" text-anchor="start">RateLimiterParallel</text>
+<rect x="285" y="372" width="40.25" height="28" rx="3" fill="#7c3aed"/>
+<text x="335.25" y="392.00" font-size="13" fill="#334155" text-anchor="start">346.0 ns/op</text>
+<text x="285.00" y="420.00" font-size="12" fill="#334155" text-anchor="start">0 B/op; 0 allocs/op</text>
+<text x="40.00" y="515.00" font-size="12" fill="#334155" text-anchor="start">Actual recorded Go output. Allocation bytes are not process RSS.</text>
+</g></svg>
